@@ -17,7 +17,7 @@ const SearchBar = () => {
     e.preventDefault();
 
     try {
-      const notes = await axios.get("https://noteshub-sigma.vercel.app/notes/getFiles", {
+      const notes = await axios.get("https://notes-hub-2g7q.vercel.app/notes/getFiles", {
         params: {
           title: searchQuery,
         },
@@ -36,7 +36,7 @@ const SearchBar = () => {
   }
 
   const showPDF = async (files) => {
-    window.open(`https://noteshub-sigma.vercel.app/files/${files}`, "_blank", "noreferrer");
+    window.open(`https://notes-hub-2g7q.vercel.app/files/${files}`, "_blank", "noreferrer");
   };
 
   return (

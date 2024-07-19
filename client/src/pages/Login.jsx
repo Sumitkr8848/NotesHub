@@ -23,7 +23,7 @@ const Login = () => {
         userPassword,
       };
 
-      const result = await axios.post("https://noteshub-sigma.vercel.app/auth/login", user);
+      const result = await axios.post("https://notes-hub-2g7q.vercel.app/auth/login", user);
       if(result.data.status==="Error")
       {
         toast.error("wrong credentials ");
