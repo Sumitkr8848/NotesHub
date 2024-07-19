@@ -9,10 +9,10 @@ dotenv.config();
 
 const router = express.Router();
 
-const storage = multer.memoryStorage();
-var upload = multer({
-    storage: storage
-});
+// const storage = multer.memoryStorage();
+// var upload = multer({
+//     storage: storage
+// });
 
 //Signup Route
 const signup = async (req, res) => {
@@ -27,12 +27,12 @@ const signup = async (req, res) => {
         }
 
         // Check if file is provided
-        if (!req.file) {
-            return res.status(400).json({ error: "No Profile Image Provided" });
-        }
+        // if (!req.file) {
+        //     return res.status(400).json({ error: "No Profile Image Provided" });
+        // }
 
-        const result = await cloudinary.uploader.upload(req.file.path);
-        console.log(result);
+        // const result = await cloudinary.uploader.upload(req.file.path);
+        // console.log(result);
 
         const password = req.body.userPassword;
         const saltRounds = 10;
@@ -50,7 +50,7 @@ const signup = async (req, res) => {
             userMobile,
             userName,
             userPassword: encryptedPassword,
-            profileImage: result.secure_url
+            // profileImage: result.secure_url
         });
 
         await newUser.save();
