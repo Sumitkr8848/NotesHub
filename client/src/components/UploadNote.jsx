@@ -26,7 +26,7 @@ const UploadNote = () => {
       console.log(formData);
 
       const result = await axios.post(
-        "http://localhost:6969/notes/upload",
+        "https://noteshub-sigma.vercel.app/notes/upload",
         formData,
         {
           headers: {
